@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentHelpers", "AgentHelper
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "add_tools", "add_tools\add_tools.csproj", "{6EC81D7E-153D-4275-9A1D-8E03C4252B1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "multi_turn", "multi_turn\multi_turn.csproj", "{9D7590DF-EDB0-4CE2-A1A7-944903B4A2DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{6EC81D7E-153D-4275-9A1D-8E03C4252B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EC81D7E-153D-4275-9A1D-8E03C4252B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EC81D7E-153D-4275-9A1D-8E03C4252B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7590DF-EDB0-4CE2-A1A7-944903B4A2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7590DF-EDB0-4CE2-A1A7-944903B4A2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7590DF-EDB0-4CE2-A1A7-944903B4A2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7590DF-EDB0-4CE2-A1A7-944903B4A2DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
