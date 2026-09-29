@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.AI;
 
-var chatClient = AgentHelpers.ClientHelpers.InitializeOpenAiClient();
+var chatClient = AgentHelpers.ClientHelpers.InitializeOpenAiChatClient();
 
 var agent = chatClient.AsAIAgent(
     name: "Joker",
