@@ -2,21 +2,35 @@
 using Microsoft.Extensions.AI;
 using OpenAI;
 
+#pragma warning disable OPENAI001
+
 namespace AgentHelpers;
 
 public static class ClientHelpers
 {
+    public static string ChatClientModelId = Environment.GetEnvironmentVariable("LOCAL_LLM_MODEL")
+                                             ?? "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4";
+
     public static IChatClient InitializeOpenAiChatClient()
     {
         var client = CreateOpenAiClient();
 
-        var modelId = Environment.GetEnvironmentVariable("LOCAL_LLM_MODEL")
-                      ?? "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4";
-
         var chatClient1 = client
-            .GetChatClient(modelId)
+            .GetChatClient(ChatClientModelId)
             .AsIChatClient();
         return chatClient1;
+    }
+
+    public static IChatClient InitializeExtractionClient()
+    {
+        var modelId = Environment.GetEnvironmentVariable("LOCAL_LLM__EXTRACTION_MODEL")
+                      ?? "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4";
+
+        // Use Chat Completions for local OpenAI-compatible servers. Their reasoning
+        // metadata is not guaranteed to use the Responses API ReasoningStatus values.
+        return CreateOpenAiClient()
+            .GetChatClient(modelId)
+            .AsIChatClient();
     }
 
     private static OpenAIClient CreateOpenAiClient()
