@@ -4,6 +4,13 @@ using Microsoft.Extensions.AI;
 
 // https://github.com/microsoft/agent-framework/tree/main/dotnet/samples/01-get-started/04_memory
 
+var model = Environment.GetEnvironmentVariable("LOCAL_LLM__EXTRACTION_MODEL");
+if(string.IsNullOrEmpty(model))
+{
+    Console.WriteLine("Please set the LOCAL_LLM__EXTRACTION_MODEL environment variable to a valid model ID.");
+    return;
+}
+
 var chatClient = AgentHelpers.ClientHelpers.InitializeOpenAiChatClient();
 
 var extractionClient = AgentHelpers.ClientHelpers.InitializeExtractionClient();
