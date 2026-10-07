@@ -37,7 +37,7 @@ public static class ClientHelpers
     {
         var endpoint = new Uri(
             Environment.GetEnvironmentVariable("LOCAL_LLM_BASE_URL")
-            ?? "http://192.168.5.2:8000/v1");
+            ?? "http://10.10.21.2:8000/v1");
 
         var openAiOptions = new OpenAIClientOptions
         {
